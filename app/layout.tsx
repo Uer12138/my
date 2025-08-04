@@ -1,7 +1,6 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
-import localFont from "next/font/local"
+import { Inter, Orbitron } from "next/font/google"
 import "./globals.css"
 
 const inter = Inter({
@@ -9,26 +8,10 @@ const inter = Inter({
   variable: "--font-inter",
 })
 
-const orbitron = localFont({
-  src: [
-    {
-      path: "../public/fonts/orbitron-regular.woff2",
-      weight: "400",
-      style: "normal",
-    },
-    {
-      path: "../public/fonts/orbitron-bold.woff2",
-      weight: "700",
-      style: "normal",
-    },
-    {
-      path: "../public/fonts/orbitron-black.woff2",
-      weight: "900",
-      style: "normal",
-    },
-  ],
+const orbitron = Orbitron({
+  subsets: ["latin"],
+  weight: ["400", "700", "900"],
   variable: "--font-orbitron",
-  fallback: ["monospace"],
 })
 
 export const metadata: Metadata = {
