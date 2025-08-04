@@ -1,5 +1,5 @@
 {
-  "name": "my-v0-project",
+  "name": "cyber-seed-dev",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -53,7 +53,6 @@
     "next-themes": "^0.4.4",
     "prop-types": "latest",
     "react": "^18",
-    "react-day-picker": "9.8.0",
     "react-dom": "^18",
     "react-hook-form": "^7.54.1",
     "react-resizable-panels": "^2.1.7",
@@ -70,6 +69,9 @@
     "@types/node": "^22",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "autoprefixer": "^10.4.16",
+    "eslint": "^8.56.0",
+    "eslint-config-next": "14.0.4",
     "postcss": "^8.5",
     "tailwindcss": "^3.4.17",
     "typescript": "^5"
