@@ -1,6 +1,8 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Inter, Orbitron } from "next/font/google"
+import { Inter } from "next/font/google"
+import { Orbitron } from "next/font/google"
+import { Oxanium } from "next/font/google"
 import "./globals.css"
 
 const inter = Inter({
@@ -10,18 +12,24 @@ const inter = Inter({
 
 const orbitron = Orbitron({
   subsets: ["latin"],
-  weight: ["400", "700", "900"],
   variable: "--font-orbitron",
 })
 
+const oxanium = Oxanium({
+  subsets: ["latin"],
+  variable: "--font-oxanium",
+})
+
 export const metadata: Metadata = {
-  title: "cyber-seed.dev | 具身智能0→1破局者的赛博空间",
-  description:
-    "专注具身智能场景落地，展示从0到1的机器人交互项目与技术方案。用3D交互+轻量化技术，让具身智能原型落地效率提升50%",
+  title: "唐大强 | 具身智能产品落地的敏捷推手",
+  description: "专注于具身智能产品的设计与开发，推动AI技术在实际应用中的快速落地",
+  keywords: ["具身智能", "机器人", "AI", "产品设计", "敏捷开发"],
+  authors: [{ name: "唐大强" }],
   openGraph: {
-    title: "cyber-seed.dev | 具身智能0→1破局者",
-    description: "唐大强 - 具身智能场景的0→1破局者，专注AI技术落地与产品化实践",
-    images: ["/assets/og-cyber-hand.webp"],
+    title: "唐大强 | 具身智能产品落地的敏捷推手",
+    description: "手心里长出的机器人 - 探索具身智能的无限可能",
+    type: "website",
+    locale: "zh_CN",
   },
     generator: 'v0.dev'
 }
@@ -32,8 +40,10 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="zh-CN" className={`${inter.variable} ${orbitron.variable}`}>
-      <body className={`${inter.className} antialiased`}>{children}</body>
+    <html lang="zh-CN" className="dark">
+      <body className={`${inter.variable} ${orbitron.variable} ${oxanium.variable} font-sans antialiased`}>
+        {children}
+      </body>
     </html>
   )
 }

@@ -1,48 +1,62 @@
 import { Suspense } from "react"
+import { EmbodiedPrototypes } from "@/components/embodied-prototypes"
+import { ProjectHUD } from "@/components/project-hud"
 import { getNotionProjects } from "@/lib/notion"
-import SplineHand from "@/components/SplineHand"
-import ProjectHUD from "@/components/ProjectHUD"
-import HeroSection from "@/components/HeroSection"
 
-export const metadata = {
-  title: "cyber-seed.dev | 具身智能0→1破局者的赛博空间",
-  description:
-    "专注具身智能场景落地，展示从0到1的机器人交互项目与技术方案。用3D交互+轻量化技术，让具身智能原型落地效率提升50%",
-  openGraph: {
-    title: "cyber-seed.dev | 具身智能0→1破局者",
-    description: "唐大强 - 具身智能场景的0→1破局者，专注AI技术落地与产品化实践",
-    images: ["/assets/og-cyber-hand.webp"],
-  },
-}
-
-async function ProjectsLoader() {
+export default async function Home() {
   const projects = await getNotionProjects()
-  return <ProjectHUD projects={projects} />
-}
 
-export default function Home() {
   return (
-    <main className="min-h-screen bg-cyber-dark overflow-hidden">
-      <HeroSection />
-      <Suspense fallback={<div className="w-full h-screen bg-cyber-dark animate-pulse" />}>
-        <SplineHand />
-      </Suspense>
-      <Suspense
-        fallback={
-          <div className="fixed bottom-8 left-8 right-8 z-20">
-            <div className="cyber-card p-6 animate-pulse">
-              <div className="h-6 bg-cyber-blue/20 rounded mb-4"></div>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                {[1, 2, 3].map((i) => (
-                  <div key={i} className="h-48 bg-gray-800/50 rounded-lg"></div>
-                ))}
-              </div>
+    <main className="relative min-h-screen bg-cyber-dark overflow-hidden">
+      {/* Background Data Flow Pattern */}
+      <div className="absolute inset-0 bg-data-flow-pattern opacity-20" />
+
+      {/* Binary Data Stream Animation */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="data-stream-animation"></div>
+      </div>
+
+      {/* Main Content Area */}
+      <section className="relative h-screen flex items-center justify-center">
+        {/* Core Experience: Embodied Product Incubator */}
+        <Suspense fallback={<div className="text-cyber-blue font-oxanium text-lg">初始化具身产品孵化器...</div>}>
+          <EmbodiedPrototypes />
+        </Suspense>
+
+        {/* Header Overlay */}
+        <div className="absolute top-8 left-8 z-10">
+          <h1 className="font-oxanium text-4xl md:text-6xl font-bold text-white mb-4">唐大强</h1>
+          <p className="text-cyber-blue text-lg md:text-xl max-w-md font-inter">具身智能产品落地的敏捷推手</p>
+          <div className="mt-4 text-sm text-gray-400 font-inter">点击原型激活 → 探索我的创造之旅</div>
+        </div>
+
+        {/* Status HUD */}
+        <div className="absolute top-8 right-8 z-10">
+          <div className="cyber-panel p-4">
+            <div className="flex items-center gap-2 mb-2">
+              <div className="w-2 h-2 bg-cyber-blue rounded-full animate-pulse" />
+              <span className="text-cyber-blue text-sm font-oxanium">INCUBATOR_ACTIVE</span>
+            </div>
+            <div className="text-xs text-gray-400 font-inter">
+              原型状态: 待激活
+              <br />
+              AI产品经验: 已加载
+              <br />
+              项目案例: {projects.length} 个就绪
             </div>
           </div>
-        }
-      >
-        <ProjectsLoader />
-      </Suspense>
+        </div>
+
+        {/* Floating Slogan */}
+        <div className="absolute bottom-16 left-1/2 transform -translate-x-1/2 z-10">
+          <div className="text-center">
+            <p className="text-cyber-blue font-oxanium text-sm tracking-wider">"从零点到智能，我的具身创造之旅"</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Project HUD Overlay */}
+      <ProjectHUD projects={projects} />
     </main>
   )
 }
