@@ -1,78 +1,52 @@
-import Link from "next/link"
-import { Calendar, MessageCircle, Mail, MapPin, Github, Phone } from "lucide-react"
+import { Calendar, MessageCircle, Mail, MapPin, GitlabIcon as GitHub } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { Textarea } from "@/components/ui/textarea"
 
 export default function Contact() {
   return (
-    <div className="min-h-screen bg-slate-900">
-      {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-slate-900/90 backdrop-blur-md border-b border-cyan-500/30">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between h-16">
-            <Link href="/" className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-cyan-400 rounded-full flex items-center justify-center">
-                <span className="text-slate-900 font-bold">T</span>
-              </div>
-              <span className="text-xl font-bold text-white">CYBER_SEED</span>
-            </Link>
+    <div className="min-h-screen bg-cyber-dark">
+      {/* Background Grid */}
+      <div className="absolute inset-0 bg-grid-pattern opacity-10" />
 
-            <div className="hidden md:flex items-center gap-8">
-              <Link href="/" className="text-gray-300 hover:text-white text-sm">
-                首页
-              </Link>
-              <Link href="/projects" className="text-gray-300 hover:text-white text-sm">
-                项目
-              </Link>
-              <Link href="/about" className="text-gray-300 hover:text-white text-sm">
-                关于
-              </Link>
-              <Link href="/contact" className="text-cyan-400 text-sm">
-                联系
-              </Link>
-            </div>
-          </div>
-        </div>
-      </nav>
-
-      <div className="relative z-10 container mx-auto px-4 py-24">
+      <div className="relative z-10 container mx-auto px-4 py-16">
         <div className="max-w-4xl mx-auto">
           {/* Header */}
           <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">CONNECT_PROTOCOL</h1>
-            <p className="text-cyan-400 text-xl">探索具身智能的无限可能</p>
+            <h1 className="font-orbitron text-4xl md:text-6xl font-bold text-white mb-4">CONNECT_PROTOCOL</h1>
+            <p className="text-cyber-blue text-xl">探索具身智能的无限可能</p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-12">
             {/* Contact Form */}
-            <div className="bg-slate-800/50 border border-cyan-500/30 rounded-lg p-8">
-              <h2 className="text-xl text-white mb-6 flex items-center gap-2 font-semibold">
-                <MessageCircle className="w-5 h-5 text-cyan-400" />
+            <div className="cyber-panel p-8">
+              <h2 className="font-orbitron text-xl text-white mb-6 flex items-center gap-2">
+                <MessageCircle className="w-5 h-5 text-cyber-blue" />
                 发送消息
               </h2>
 
               <form className="space-y-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
-                    姓名 *
+                    姓名
                   </label>
-                  <input
+                  <Input
                     id="name"
                     type="text"
-                    required
-                    className="w-full px-4 py-2 bg-slate-700 border border-cyan-500/30 rounded-md text-white focus:border-cyan-400 focus:outline-none"
+                    className="bg-black/50 border-cyber-blue/30 text-white focus:border-cyber-blue"
                     placeholder="您的姓名"
                   />
                 </div>
 
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
-                    邮箱 *
+                    邮箱
                   </label>
-                  <input
+                  <Input
                     id="email"
                     type="email"
-                    required
-                    className="w-full px-4 py-2 bg-slate-700 border border-cyan-500/30 rounded-md text-white focus:border-cyan-400 focus:outline-none"
-                    placeholder="your.email@example.com"
+                    className="bg-black/50 border-cyber-blue/30 text-white focus:border-cyber-blue"
+                    placeholder="1627518646@qq.com"
                   />
                 </div>
 
@@ -80,119 +54,95 @@ export default function Contact() {
                   <label htmlFor="company" className="block text-sm font-medium text-gray-300 mb-2">
                     公司/组织
                   </label>
-                  <input
+                  <Input
                     id="company"
                     type="text"
-                    className="w-full px-4 py-2 bg-slate-700 border border-cyan-500/30 rounded-md text-white focus:border-cyan-400 focus:outline-none"
-                    placeholder="您的公司或组织（可选）"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-gray-300 mb-2">
-                    主题 *
-                  </label>
-                  <input
-                    id="subject"
-                    type="text"
-                    required
-                    className="w-full px-4 py-2 bg-slate-700 border border-cyan-500/30 rounded-md text-white focus:border-cyan-400 focus:outline-none"
-                    placeholder="邮件主题"
+                    className="bg-black/50 border-cyber-blue/30 text-white focus:border-cyber-blue"
+                    placeholder="您的公司或组织"
                   />
                 </div>
 
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
-                    消息内容 *
+                    消息内容
                   </label>
-                  <textarea
+                  <Textarea
                     id="message"
-                    rows={5}
-                    required
-                    className="w-full px-4 py-2 bg-slate-700 border border-cyan-500/30 rounded-md text-white focus:border-cyan-400 focus:outline-none"
-                    placeholder="请描述您的项目需求、合作意向或想要讨论的技术问题..."
+                    rows={4}
+                    className="bg-black/50 border-cyber-blue/30 text-white focus:border-cyber-blue"
+                    placeholder="请描述您的项目需求或合作意向..."
                   />
                 </div>
 
-                <button
-                  type="submit"
-                  className="w-full bg-cyan-400 hover:bg-cyan-500 text-slate-900 px-4 py-2 rounded-md font-medium"
-                >
-                  发送消息
-                </button>
+                <Button className="w-full bg-cyber-blue hover:bg-cyber-blue/80">发送消息</Button>
               </form>
-
-              <div className="mt-6 text-xs text-gray-400">* 必填字段。我通常在2小时内回复邮件。</div>
             </div>
 
-            {/* Contact Info */}
+            {/* Contact Info & Calendar */}
             <div className="space-y-6">
               {/* Quick Contact */}
-              <div className="bg-slate-800/50 border border-cyan-500/30 rounded-lg p-6">
-                <h2 className="text-xl text-white mb-4 flex items-center gap-2 font-semibold">
-                  <Calendar className="w-5 h-5 text-pink-400" />
+              <div className="cyber-panel p-6">
+                <h2 className="font-orbitron text-xl text-white mb-4 flex items-center gap-2">
+                  <Calendar className="w-5 h-5 text-cyber-pink" />
                   预约面试
                 </h2>
 
-                <p className="text-gray-300 mb-4">直接预约 30 分钟技术交流，深入讨论具身智能项目合作机会。</p>
+                <p className="text-gray-300 mb-4">直接预约 30 分钟技术交流，深入讨论具身智能项目合作</p>
 
-                <button className="w-full bg-pink-500 hover:bg-pink-600 text-white px-4 py-2 rounded-md font-medium mb-6">
-                  预约日历时间
-                </button>
+                <Button className="w-full bg-cyber-pink hover:bg-cyber-pink/80 mb-4">预约日历时间</Button>
 
                 <div className="space-y-3 text-sm">
                   <div className="flex items-center gap-3">
-                    <Mail className="w-4 h-4 text-cyan-400" />
-                    <a href="mailto:1627518646@qq.com" className="text-gray-300 hover:text-cyan-400 transition-colors">
-                      1627518646@qq.com
-                    </a>
+                    <Mail className="w-4 h-4 text-cyber-blue" />
+                    <span className="text-gray-300">1627518646@qq.com</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <MessageCircle className="w-4 h-4 text-cyan-400" />
+                    <MessageCircle className="w-4 h-4 text-cyber-blue" />
                     <span className="text-gray-300">微信: cyber-seed-ai</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <Phone className="w-4 h-4 text-cyan-400" />
-                    <span className="text-gray-300">电话: +86 138-xxxx-xxxx</span>
+                    <MapPin className="w-4 h-4 text-cyber-blue" />
+                    <span className="text-gray-300">西安 / 远程</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <MapPin className="w-4 h-4 text-cyan-400" />
-                    <span className="text-gray-300">西安 / 远程工作</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <Github className="w-4 h-4 text-cyan-400" />
-                    <a
-                      href="https://github.com/tangdaqiang/tangdaqiang.github.io"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-gray-300 hover:text-cyan-400 transition-colors"
-                    >
-                      tangdaqiang.github.io
-                    </a>
+                    <GitHub className="w-4 h-4 text-cyber-blue" />
+                    <span className="text-gray-300">
+                      GitHub:{" "}
+                      <a
+                        href="https://github.com/tangdaqiang/tangdaqiang.github.io"
+                        className="text-cyber-blue hover:underline"
+                      >
+                        tangdaqiang.github.io
+                      </a>
+                    </span>
                   </div>
                 </div>
               </div>
 
+              {/* WeChat QR Code */}
+              <div className="cyber-panel p-6 text-center">
+                <h3 className="font-orbitron text-lg text-white mb-4">微信二维码</h3>
+
+                <div className="inline-block p-4 bg-white rounded-lg">
+                  <img
+                    src="/placeholder.svg?height=150&width=150&text=WeChat+QR"
+                    alt="WeChat QR Code"
+                    className="w-32 h-32"
+                  />
+                </div>
+
+                <p className="text-sm text-gray-400 mt-3">扫码添加微信，获取更多项目详情</p>
+              </div>
+
               {/* Response Time */}
-              <div className="bg-slate-800/50 border border-cyan-500/30 rounded-lg p-4">
-                <h3 className="text-lg text-white mb-3 font-semibold">响应时间</h3>
-                <div className="space-y-2 text-sm">
-                  <div className="flex items-center justify-between">
-                    <span className="text-gray-400">邮件回复</span>
-                    <span className="text-cyan-400">{"< 2 小时"}</span>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-gray-400">微信回复</span>
-                    <span className="text-cyan-400">{"< 30 分钟"}</span>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-gray-400">工作时间</span>
-                    <span className="text-cyan-400">9:00 - 21:00</span>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-gray-400">时区</span>
-                    <span className="text-cyan-400">GMT+8 (北京)</span>
-                  </div>
+              <div className="cyber-panel p-4">
+                <div className="flex items-center justify-between text-sm">
+                  <span className="text-gray-400">平均响应时间</span>
+                  <span className="text-cyber-blue">{"< 2 小时"}</span>
+                </div>
+                <div className="flex items-center justify-between text-sm mt-2">
+                  <span className="text-gray-400">工作时间</span>
+                  <span className="text-cyber-blue">9:00 - 21:00</span>
                 </div>
               </div>
             </div>
