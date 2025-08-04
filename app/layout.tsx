@@ -1,0 +1,56 @@
+import type React from "react"
+import type { Metadata } from "next"
+import { Inter } from "next/font/google"
+import localFont from "next/font/local"
+import "./globals.css"
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+})
+
+const orbitron = localFont({
+  src: [
+    {
+      path: "../public/fonts/orbitron-regular.woff2",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/orbitron-bold.woff2",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/orbitron-black.woff2",
+      weight: "900",
+      style: "normal",
+    },
+  ],
+  variable: "--font-orbitron",
+  fallback: ["monospace"],
+})
+
+export const metadata: Metadata = {
+  title: "cyber-seed.dev | 具身智能0→1破局者的赛博空间",
+  description:
+    "专注具身智能场景落地，展示从0到1的机器人交互项目与技术方案。用3D交互+轻量化技术，让具身智能原型落地效率提升50%",
+  openGraph: {
+    title: "cyber-seed.dev | 具身智能0→1破局者",
+    description: "唐大强 - 具身智能场景的0→1破局者，专注AI技术落地与产品化实践",
+    images: ["/assets/og-cyber-hand.webp"],
+  },
+    generator: 'v0.dev'
+}
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
+  return (
+    <html lang="zh-CN" className={`${inter.variable} ${orbitron.variable}`}>
+      <body className={`${inter.className} antialiased`}>{children}</body>
+    </html>
+  )
+}
