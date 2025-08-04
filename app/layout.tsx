@@ -23,13 +23,18 @@ const oxanium = Oxanium({
 export const metadata: Metadata = {
   title: "唐大强 | 具身智能产品落地的敏捷推手",
   description: "专注于具身智能产品的设计与开发，推动AI技术在实际应用中的快速落地",
-  keywords: ["具身智能", "机器人", "AI", "产品设计", "敏捷开发"],
+  keywords: ["具身智能", "机器人", "AI", "产品设计", "敏捷开发", "唐大强"],
   authors: [{ name: "唐大强" }],
   openGraph: {
     title: "唐大强 | 具身智能产品落地的敏捷推手",
     description: "手心里长出的机器人 - 探索具身智能的无限可能",
     type: "website",
     locale: "zh_CN",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "唐大强 | 具身智能产品落地的敏捷推手",
+    description: "手心里长出的机器人 - 探索具身智能的无限可能",
   },
     generator: 'v0.dev'
 }

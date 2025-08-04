@@ -1,6 +1,7 @@
 import { Suspense } from "react"
 import { EmbodiedPrototypes } from "@/components/embodied-prototypes"
 import { ProjectHUD } from "@/components/project-hud"
+import { Navigation } from "@/components/navigation"
 import { getNotionProjects } from "@/lib/notion"
 
 export default async function Home() {
@@ -8,6 +9,9 @@ export default async function Home() {
 
   return (
     <main className="relative min-h-screen bg-cyber-dark overflow-hidden">
+      {/* Navigation */}
+      <Navigation />
+
       {/* Background Data Flow Pattern */}
       <div className="absolute inset-0 bg-data-flow-pattern opacity-20" />
 
@@ -24,14 +28,14 @@ export default async function Home() {
         </Suspense>
 
         {/* Header Overlay */}
-        <div className="absolute top-8 left-8 z-10">
+        <div className="absolute top-24 left-8 z-10">
           <h1 className="font-oxanium text-4xl md:text-6xl font-bold text-white mb-4">唐大强</h1>
           <p className="text-cyber-blue text-lg md:text-xl max-w-md font-inter">具身智能产品落地的敏捷推手</p>
           <div className="mt-4 text-sm text-gray-400 font-inter">点击原型激活 → 探索我的创造之旅</div>
         </div>
 
         {/* Status HUD */}
-        <div className="absolute top-8 right-8 z-10">
+        <div className="absolute top-24 right-8 z-10">
           <div className="cyber-panel p-4">
             <div className="flex items-center gap-2 mb-2">
               <div className="w-2 h-2 bg-cyber-blue rounded-full animate-pulse" />

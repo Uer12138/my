@@ -1,14 +1,17 @@
+import { Navigation } from "@/components/navigation"
 import { SkillRadar } from "@/components/skill-radar"
 import { Button } from "@/components/ui/button"
-import { Play, Download, Zap, Users, Eye } from "lucide-react"
+import { Play, Download, Zap, Users, Eye, Award, GraduationCap } from "lucide-react"
 
 export default function About() {
   return (
     <div className="min-h-screen bg-cyber-dark">
+      <Navigation />
+
       {/* Background Grid */}
       <div className="absolute inset-0 bg-data-flow-pattern opacity-10" />
 
-      <div className="relative z-10 container mx-auto px-4 py-16">
+      <div className="relative z-10 container mx-auto px-4 py-24">
         <div className="max-w-4xl mx-auto">
           {/* Header */}
           <div className="text-center mb-16">
@@ -42,6 +45,11 @@ export default function About() {
                     "让机器人从实验室走向现实，让AI从虚拟走向具身。"
                   </p>
                 </div>
+
+                <p>
+                  在多模态智能交互小车项目中，我担任产品经理和项目协调者，
+                  成功将团队的技术能力转化为用户价值，项目最终获得了98.3%的性能指标和4.6/5.0的用户满意度。
+                </p>
               </div>
 
               <Button className="w-full mt-6 bg-cyber-blue hover:bg-cyber-blue/80 text-cyber-dark font-oxanium">
@@ -127,23 +135,89 @@ export default function About() {
               </p>
 
               <p className="text-gray-300 leading-relaxed">
-                例如，在项目中，我将一个模糊的"智能服务"概念，分解为多个可快速验证的子功能，
-                每完成一个就进行团队内部复盘，确保每一步都走在正确的方向上。
+                例如，在多模态智能交互小车项目中，我将一个模糊的"智能服务"概念，分解为多个可快速验证的子功能，
+                每完成一个就进行团队内部复盘，确保每一步都走在正确的方向上。最终实现了从78%到98.3%的识别准确率提升。
               </p>
             </div>
           </div>
 
-          {/* Education */}
-          <div className="mt-8 cyber-panel p-6">
-            <h2 className="font-oxanium text-xl text-white mb-4">教育背景</h2>
-            <div className="flex items-center justify-between">
-              <div>
-                <h3 className="text-white font-medium">西安邮电大学</h3>
-                <p className="text-gray-400 text-sm">智能科学与技术专业</p>
+          {/* Education & Achievements */}
+          <div className="grid md:grid-cols-2 gap-8 mt-8">
+            {/* Education */}
+            <div className="cyber-panel p-6">
+              <h2 className="font-oxanium text-xl text-white mb-4 flex items-center gap-2">
+                <GraduationCap className="w-5 h-5 text-cyber-blue" />
+                教育背景
+              </h2>
+              <div className="space-y-4">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <h3 className="text-white font-medium">西安邮电大学</h3>
+                    <p className="text-gray-400 text-sm">智能科学与技术专业</p>
+                    <p className="text-gray-400 text-xs">核心课程：机器学习、计算机视觉、机器人学、人工智能</p>
+                  </div>
+                  <div className="text-right">
+                    <p className="text-cyber-blue font-oxanium">2026届</p>
+                    <p className="text-gray-400 text-sm">应届毕业生</p>
+                  </div>
+                </div>
               </div>
-              <div className="text-right">
-                <p className="text-cyber-blue font-oxanium">2026届</p>
-                <p className="text-gray-400 text-sm">应届毕业生</p>
+            </div>
+
+            {/* Achievements */}
+            <div className="cyber-panel p-6">
+              <h2 className="font-oxanium text-xl text-white mb-4 flex items-center gap-2">
+                <Award className="w-5 h-5 text-cyber-blue" />
+                项目成就
+              </h2>
+              <div className="space-y-3 text-sm">
+                <div className="flex items-center justify-between">
+                  <span className="text-gray-300">多模态智能交互小车</span>
+                  <span className="text-cyber-blue">98.3% 准确率</span>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-gray-300">用户满意度评分</span>
+                  <span className="text-cyber-blue">4.6/5.0</span>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-gray-300">项目按时完成率</span>
+                  <span className="text-cyber-blue">100%</span>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-gray-300">团队协作满意度</span>
+                  <span className="text-cyber-blue">4.8/5.0</span>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-gray-300">性能优化提升</span>
+                  <span className="text-cyber-blue">64%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Core Competencies */}
+          <div className="mt-8 cyber-panel p-6">
+            <h2 className="font-oxanium text-xl text-white mb-6">核心能力</h2>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div>
+                <h3 className="text-cyber-blue font-medium mb-3">技术能力</h3>
+                <ul className="space-y-2 text-sm text-gray-300 font-inter">
+                  <li>• Python、JavaScript、C++ 编程</li>
+                  <li>• MindSpore、PyTorch、TensorFlow 深度学习框架</li>
+                  <li>• OpenCV、NLTK 计算机视觉与自然语言处理</li>
+                  <li>• ROS2 机器人操作系统</li>
+                  <li>• Jetson Nano、树莓派等边缘计算平台</li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-cyber-blue font-medium mb-3">产品能力</h3>
+                <ul className="space-y-2 text-sm text-gray-300 font-inter">
+                  <li>• 用户需求分析与产品规划</li>
+                  <li>• 敏捷项目管理与团队协作</li>
+                  <li>• 原型设计与用户体验优化</li>
+                  <li>• 数据分析与产品迭代</li>
+                  <li>• 跨学科团队沟通与协调</li>
+                </ul>
               </div>
             </div>
           </div>
