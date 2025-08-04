@@ -5,7 +5,6 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { Menu, X, Zap } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { motion, AnimatePresence } from "framer-motion"
 
 const navItems = [
   { href: "/", label: "首页", id: "home" },
@@ -58,36 +57,29 @@ export function Navigation() {
         </div>
 
         {/* Mobile Navigation */}
-        <AnimatePresence>
-          {isOpen && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              className="md:hidden border-t border-cyber-blue/30"
-            >
-              <div className="py-4 space-y-4">
-                {navItems.map((item) => (
-                  <Link
-                    key={item.id}
-                    href={item.href}
-                    onClick={() => setIsOpen(false)}
-                    className={`block font-inter text-sm transition-colors ${
-                      pathname === item.href ? "text-cyber-blue" : "text-gray-300 hover:text-white"
-                    }`}
-                  >
-                    {item.label}
-                  </Link>
-                ))}
-                <Button asChild className="w-full bg-cyber-blue hover:bg-cyber-blue/80 text-cyber-dark font-oxanium">
-                  <Link href="/contact" onClick={() => setIsOpen(false)}>
-                    联系我
-                  </Link>
-                </Button>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
+        {isOpen && (
+          <div className="md:hidden border-t border-cyber-blue/30">
+            <div className="py-4 space-y-4">
+              {navItems.map((item) => (
+                <Link
+                  key={item.id}
+                  href={item.href}
+                  onClick={() => setIsOpen(false)}
+                  className={`block font-inter text-sm transition-colors ${
+                    pathname === item.href ? "text-cyber-blue" : "text-gray-300 hover:text-white"
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              ))}
+              <Button asChild className="w-full bg-cyber-blue hover:bg-cyber-blue/80 text-cyber-dark font-oxanium">
+                <Link href="/contact" onClick={() => setIsOpen(false)}>
+                  联系我
+                </Link>
+              </Button>
+            </div>
+          </div>
+        )}
       </div>
     </nav>
   )
