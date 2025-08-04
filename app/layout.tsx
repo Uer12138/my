@@ -6,9 +6,9 @@ import "./globals.css"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "唐大强 | 具身智能产品落地的敏捷推手",
-  description: "专注于具身智能产品的设计与开发，推动AI技术在实际应用中的快速落地",
-  keywords: ["具身智能", "机器人", "AI", "产品设计", "敏捷开发", "唐大强"],
+  title: "轻茶纪 - 你的奶茶健康伙伴",
+  description: "聪明喝奶茶，享受与健康的完美平衡。科学管理奶茶热量，让每一杯都喝得安心。",
+  keywords: ["奶茶", "热量管理", "健康", "卡路里", "饮品"],
     generator: 'v0.dev'
 }
 

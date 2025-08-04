@@ -7,9 +7,6 @@ const config: Config = {
     "./components/**/*.{ts,tsx}",
     "./app/**/*.{ts,tsx}",
     "./src/**/*.{ts,tsx}",
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "*.{js,ts,jsx,tsx,mdx}",
   ],
   prefix: "",
@@ -22,16 +19,7 @@ const config: Config = {
       },
     },
     extend: {
-      fontFamily: {
-        orbitron: ["var(--font-orbitron)", "monospace"],
-        inter: ["Inter", "sans-serif"],
-        oxanium: ["Oxanium", "monospace"],
-      },
       colors: {
-        "cyber-dark": "#001A33", // 深邃海军蓝
-        "cyber-blue": "#00FFC0", // 荧光青绿
-        "cyber-pink": "#FF0055",
-        "cyber-secondary": "#0A2D4F", // 中度科技蓝
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -65,6 +53,19 @@ const config: Config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        // 奶茶主题色彩
+        tea: {
+          50: "#fefdf8",
+          100: "#fef7e0",
+          200: "#fdecc8",
+          300: "#fbd38d",
+          400: "#f6ad55",
+          500: "#ed8936",
+          600: "#dd6b20",
+          700: "#c05621",
+          800: "#9c4221",
+          900: "#7b341e",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -80,10 +81,21 @@ const config: Config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        "fade-in-up": {
+          "0%": {
+            opacity: "0",
+            transform: "translateY(20px)",
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translateY(0)",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "fade-in-up": "fade-in-up 0.5s ease-out",
       },
     },
   },
