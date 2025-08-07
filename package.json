@@ -36,9 +36,11 @@
     "@radix-ui/react-toggle": "latest",
     "@radix-ui/react-toggle-group": "latest",
     "@radix-ui/react-tooltip": "latest",
+    "@supabase/supabase-js": "^2.53.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cmdk": "latest",
+    "crypto-js": "^4.2.0",
     "embla-carousel-react": "latest",
     "input-otp": "latest",
     "lucide-react": "^0.454.0",
@@ -56,6 +58,7 @@
     "vaul": "latest"
   },
   "devDependencies": {
+    "@types/crypto-js": "^4.2.2",
     "@types/node": "^22",
     "@types/react": "^18",
     "@types/react-dom": "^18",

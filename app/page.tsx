@@ -62,12 +62,31 @@ export default function HomePage() {
 
   if (!user) {
     return (
-      <WelcomePage
-        onComplete={(userData) => {
-          localStorage.setItem("teacal_user", JSON.stringify(userData))
-          setUser(userData)
-        }}
-      />
+      <div className="min-h-screen bg-gradient-to-br from-amber-50 to-orange-50 flex items-center justify-center p-4">
+        <Card className="w-full max-w-md bg-white/80 backdrop-blur-sm border-amber-200">
+          <CardHeader className="text-center">
+            <div className="flex items-center justify-center mb-4">
+              <div className="w-12 h-12 bg-gradient-to-r from-amber-400 to-orange-400 rounded-full flex items-center justify-center">
+                <Coffee className="w-7 h-7 text-white" />
+              </div>
+            </div>
+            <CardTitle className="text-2xl font-bold text-amber-900">欢迎来到轻茶纪</CardTitle>
+            <p className="text-amber-600">登录或注册开始你的奶茶健康管理之旅</p>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <Link href="/login">
+              <Button className="w-full bg-gradient-to-r from-amber-400 to-orange-400 hover:from-amber-500 hover:to-orange-500 text-white">
+                登录
+              </Button>
+            </Link>
+            <Link href="/register">
+              <Button variant="outline" className="w-full border-amber-300 text-amber-700 hover:bg-amber-50">
+                注册
+              </Button>
+            </Link>
+          </CardContent>
+        </Card>
+      </div>
     )
   }
 
@@ -86,11 +105,34 @@ export default function HomePage() {
                 <p className="text-xs text-amber-600">你的奶茶健康伙伴</p>
               </div>
             </div>
-            <Link href="/profile">
-              <div className="w-8 h-8 bg-amber-200 rounded-full flex items-center justify-center">
-                <span className="text-sm font-medium text-amber-800">{user?.name?.[0] || "U"}</span>
+            <div className="flex items-center gap-3">
+              <Link href="/tasks">
+                <Button variant="outline" size="sm" className="border-amber-300 text-amber-700 hover:bg-amber-50">
+                  任务管理
+                </Button>
+              </Link>
+              <div className="relative group">
+                <button className="w-8 h-8 bg-amber-200 rounded-full flex items-center justify-center hover:bg-amber-300 transition-colors">
+                  <span className="text-sm font-medium text-amber-800">{user?.username?.[0] || "U"}</span>
+                </button>
+                <div className="absolute right-0 top-full mt-2 w-48 bg-white rounded-md shadow-lg border border-amber-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                  <div className="py-2">
+                    <div className="px-4 py-2 text-sm text-amber-600 border-b border-amber-100">
+                      {user?.username}
+                    </div>
+                    <button
+                      onClick={() => {
+                        localStorage.removeItem("teacal_user")
+                        window.location.reload()
+                      }}
+                      className="w-full text-left px-4 py-2 text-sm text-amber-700 hover:bg-amber-50"
+                    >
+                      退出登录
+                    </button>
+                  </div>
+                </div>
               </div>
-            </Link>
+            </div>
           </div>
         </div>
       </header>
