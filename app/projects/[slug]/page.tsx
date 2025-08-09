@@ -1,5 +1,4 @@
 import Link from "next/link"
-import { Navigation } from "@/components/navigation"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { ArrowLeft, Github, FileText, Zap, Users, Eye, TrendingUp } from "lucide-react"
@@ -99,7 +98,6 @@ export default function ProjectDetail({ params }: { params: { slug: string } }) 
 
   return (
     <div className="min-h-screen bg-cyber-dark">
-      <Navigation />
 
       {/* Background */}
       <div className="absolute inset-0 bg-data-flow-pattern opacity-10" />

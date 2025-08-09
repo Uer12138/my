@@ -4,35 +4,6 @@ import { Calendar, MessageCircle, Mail, MapPin, Github, Phone } from "lucide-rea
 export default function Contact() {
   return (
     <div className="min-h-screen bg-slate-900">
-      {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-slate-900/90 backdrop-blur-md border-b border-cyan-500/30">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between h-16">
-            <Link href="/" className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-cyan-400 rounded-full flex items-center justify-center">
-                <span className="text-slate-900 font-bold">T</span>
-              </div>
-              <span className="text-xl font-bold text-white">CYBER_SEED</span>
-            </Link>
-
-            <div className="hidden md:flex items-center gap-8">
-              <Link href="/" className="text-gray-300 hover:text-white text-sm">
-                首页
-              </Link>
-              <Link href="/projects" className="text-gray-300 hover:text-white text-sm">
-                项目
-              </Link>
-              <Link href="/about" className="text-gray-300 hover:text-white text-sm">
-                关于
-              </Link>
-              <Link href="/contact" className="text-cyan-400 text-sm">
-                联系
-              </Link>
-            </div>
-          </div>
-        </div>
-      </nav>
-
       <div className="relative z-10 container mx-auto px-4 py-24">
         <div className="max-w-4xl mx-auto">
           {/* Header */}
@@ -149,7 +120,7 @@ export default function Contact() {
                   </div>
                   <div className="flex items-center gap-3">
                     <MessageCircle className="w-4 h-4 text-cyan-400" />
-                    <span className="text-gray-300">微信: cyber-seed-ai</span>
+                    <span className="text-gray-300">微信: teacal-health</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <Phone className="w-4 h-4 text-cyan-400" />
